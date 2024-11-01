@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washrrom Cleaner</title>
+</head>
+<body>
+   
+    <form method="post" action="/">
+        {% csrf_token %}
+        <input type="text" name="todo" value="100">
+        <button type="submit">start</button>
+    </form>
+
+    <button onclick="window.location.href='/height'">Height Detection</button>
+</body>
+</html>

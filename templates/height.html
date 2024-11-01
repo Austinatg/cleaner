@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height</title>
+</head>
+<body>
+
+    <div class="video-container">
+        <img src="/video_feed_2/" alt="Video Feed">
+    </div>
+    
+    <div id="react">
+        <span id="height_display">.</span>
+    </div>
+    <button onclick="window.location.href='/'">stain Detection</button>
+
+    <script>
+        if (!!window.EventSource ){
+            var source = new EventSource("{% url 'react_1' %}");
+            source.onmessage = function(event){
+                
+                content = event.data
+                document.getElementById("height_display").textContent = content;
+                
+            };
+        }
+        else{
+            console.log("Your Browser does not support SSE")
+        }
+    </script>
+</body>
+
+</html>
